@@ -90,7 +90,11 @@ int main(void)
     
     
 
-
+    //Seeting the initial colours of the Player Circle and the Goal Ball
+    player.circleColor1 = PINK;
+    player.circleColor2 = SKYBLUE;
+    circle.circleColor1 = DARKGREEN;
+    circle.circleColor2 = YELLOW;
     
 
 
@@ -101,12 +105,7 @@ int main(void)
         void ShowCursor(void);
         void HideCursor(void);
 
-        //Circle colours
-        player.circleColor1 = PINK;
-        player.circleColor2 = SKYBLUE;
-
-        circle.circleColor1 = DARKGREEN; 
-        circle.circleColor2 = YELLOW; 
+       
 
         collision = CheckCollisionCircles({ player.x,player.y }, player.pCircleRadius, { 666, 420 }, circle.circleRadius);
         
