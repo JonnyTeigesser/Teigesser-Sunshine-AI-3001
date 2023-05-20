@@ -6,8 +6,8 @@
 #define SCREEN_HEIGHT 720
 
 //Checklist for the lab compleation 
-//Add collision with the circles
 //Add 10 more functions from the raylib cheat sheet. 
+
 //Make notation on the functions explaining them
 // Make the video also
 
@@ -60,22 +60,7 @@ public:
 };
 
 
-//void playerColission(Player& player, Circle& circle)
-//{
-//    bool collision = false;
-//    
-//    
-//        if (CheckCollisionCircles(Vector2{ player.x, player.y }, player.circleRadius, Vector2{ circle.x, circle.y }, circle.circleRadius))
-//        {
-//
-//            //CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2);
-//            player.circleColor1 = BLACK;
-//            player.circleColor2 = RED;
-//           
-//        }
-//
-//    
-//}
+
 Player player; 
 Circle circle; 
 
@@ -105,13 +90,16 @@ int main(void)
         void ShowCursor(void);
         void HideCursor(void);
 
-       
-
         collision = CheckCollisionCircles({ player.x,player.y }, player.pCircleRadius, { 666, 420 }, circle.circleRadius);
-        
+       
+        //Audio init
+        void InitAudioDevice(void);
+
+
         ////////DRAW/////
         BeginDrawing();
         ClearBackground(GRAY);
+        DrawFPS(10, 10);//FPS Display
         
        //Goal Ball  
         circle.x = 666; 
@@ -151,19 +139,20 @@ int main(void)
        
 
        //The puzzle walls, maybe make this into a class for the sake of detection?   
-
-        DrawLineEx({ 60,0 }, { 60,200 }, 5.0, PINK); 
+        /*DrawLineEx({ 60,0 }, { 60,200 }, 5.0, PINK); 
         DrawLineEx({ 60,200 }, { 85,300 }, 5.0, GREEN);
         DrawLineEx({ 85,300 }, { 125,100 }, 5.0, RED);
-        DrawLineEx({ 35,0 }, { 35,100 }, 5.0, BLUE);
+        DrawLineEx({ 35,0 }, { 35,100 }, 5.0, BLUE);*/
+
         
           
        
         
 
         
-        DrawFPS(10, 10);//FPS Display
+        
 
+        void CloseAudioDevice(void);
         EndDrawing(); 
 
 
